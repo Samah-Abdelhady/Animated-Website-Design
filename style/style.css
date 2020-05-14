@@ -1,0 +1,101 @@
+#backgroundOne, #backgroundTwo {
+	position: absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	width:100%;
+	height: 100%;
+}
+#backgroundOne {
+	z-index: 1;	
+	background-color: #FF99CC;
+}
+#backgroundTwo {
+	background-color: #fff;
+}
+.animationOne {
+	animation-name: moving;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+}
+.animationTwo {
+	animation-name: movingBack;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+}
+	
+#showBtn, #closeBtn {
+	text-transform: uppercase;
+	position: relative;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+	
+}
+#showBtn {
+	color:#fff;
+	width:200px;
+	border:solid 2px #fff;
+	left:40%;
+	top:40%;
+}
+#closeBtn {
+	color:#AC7490;
+	width:150px;
+	border:solid 2px #FF99CC;
+	left:43%;
+	top:32%;
+}
+.partOne , .partTwo {
+	position:relative;
+	text-align: center;
+	line-height: 10px;
+	top:27%;
+}
+.textAnimation{
+	animation-name: textAnimation;
+	animation-duration: 4s;
+	animation-fill-mode: forwards;
+}
+.partOne {
+	color:#FF99CC;
+	font-size: 35px;
+	
+}
+.partTwo {
+	color:#AC7490;
+	font-size: 20px;
+}
+
+@keyframes moving {
+	from{
+		transform: perspective(0px) rotateX(0deg);
+		transform-origin: bottom;
+	}
+	to{
+		transform: perspective(600px) rotateX(65deg);
+		transform-origin: bottom;
+	}
+}
+
+@keyframes movingBack {
+		from{
+		transform: perspective(600px) rotateX(65deg);
+		transform-origin: bottom;
+	}
+	to{
+		transform: perspective(0px) rotateX(0deg);
+		transform-origin: bottom;
+	}
+}
+@keyframes textAnimation {
+	from{
+		opacity: 0;
+		transform: translateY(-100px);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
